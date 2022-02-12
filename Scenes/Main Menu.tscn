@@ -1,0 +1,277 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/Fonts/Montserrat-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/TempTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Sprites/Doors/Entrances/crypt-entrance.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/dead-wood.svg" type="Texture" id=4]
+[ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Music&sFX/atmosphere.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Music&sFX/button_press.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Music&sFX/description_changed.wav" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crypt-entrance" type="Sprite" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0.305882 )
+position = Vector2( 4.00001, 3.00422 )
+scale = Vector2( 0.334255, 0.334255 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Dead-wood" type="Sprite" parent="Background"]
+self_modulate = Color( 0.027451, 0.027451, 0.027451, 0.627451 )
+position = Vector2( -15.5327, 202.976 )
+rotation = 0.138697
+scale = Vector2( 0.477482, 0.477482 )
+texture = ExtResource( 4 )
+offset = Vector2( 66.1862, 26.7607 )
+
+[node name="Dead-wood2" type="Sprite" parent="Background"]
+self_modulate = Color( 0.0941176, 0.0941176, 0.0941176, 0.670588 )
+position = Vector2( 156, 150 )
+rotation = -0.176608
+scale = Vector2( 0.372429, 0.372429 )
+texture = ExtResource( 4 )
+offset = Vector2( 66.1862, 26.7607 )
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 170.0
+margin_bottom = 310.0
+custom_constants/separation = 60
+
+[node name="Title" type="VBoxContainer" parent="Background/Margin/VBox"]
+margin_right = 160.0
+margin_bottom = 75.0
+
+[node name="TitleLeft" type="Label" parent="Background/Margin/VBox/Title"]
+margin_right = 160.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "Crypt's"
+
+[node name="TitleRight" type="Label" parent="Background/Margin/VBox/Title"]
+margin_top = 44.0
+margin_right = 160.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 2 )
+text = "Crawlers"
+align = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Background/Margin/VBox"]
+visible = false
+margin_top = 135.0
+margin_right = 160.0
+margin_bottom = 215.0
+
+[node name="Continue" type="Button" parent="Background/Margin/VBox/Buttons" groups=["Button"]]
+visible = false
+margin_left = 30.0
+margin_right = 130.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 4
+disabled = true
+toggle_mode = true
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="Background/Margin/VBox/Buttons" groups=["Button"]]
+margin_left = 30.0
+margin_right = 130.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 4
+toggle_mode = true
+text = "New Game"
+
+[node name="Settings" type="Button" parent="Background/Margin/VBox/Buttons" groups=["Button"]]
+margin_left = 30.0
+margin_top = 28.0
+margin_right = 130.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 4
+toggle_mode = true
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Background/Margin/VBox/Buttons" groups=["Button"]]
+margin_left = 30.0
+margin_top = 56.0
+margin_right = 130.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 4
+toggle_mode = true
+text = "Quit"
+
+[node name="Credit" type="Label" parent="Background/Margin/VBox"]
+margin_top = 289.0
+margin_right = 160.0
+margin_bottom = 300.0
+size_flags_vertical = 10
+custom_colors/font_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "By Touff, inspired by Heartbeast"
+align = 1
+autowrap = true
+
+[node name="HBox" type="HBoxContainer" parent="Background/Margin/VBox/Credit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Background/Margin/VBox/Credit/HBox"]
+margin_right = 25.0
+margin_bottom = 11.0
+rect_min_size = Vector2( 25, 0 )
+custom_styles/panel = SubResource( 6 )
+
+[node name="Touff" type="LinkButton" parent="Background/Margin/VBox/Credit/HBox"]
+margin_left = 29.0
+margin_right = 50.0
+margin_bottom = 11.0
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+text = "Touff"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Background/Margin/VBox/Credit/HBox"]
+margin_left = 54.0
+margin_right = 96.0
+margin_bottom = 11.0
+rect_min_size = Vector2( 42, 0 )
+custom_styles/panel = SubResource( 6 )
+
+[node name="Heartbeast" type="LinkButton" parent="Background/Margin/VBox/Credit/HBox"]
+margin_left = 100.0
+margin_right = 146.0
+margin_bottom = 11.0
+focus_mode = 2
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 9 )
+text = "HeartBeast"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instance" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" parent="." instance=ExtResource( 6 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/fade = SubResource( 5 )
+
+[node name="Fade" type="ColorRect" parent="AnimationPlayer"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "Music"
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+volume_db = -12.0
+bus = "Sounds"
+
+[node name="LinkPressed" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+
+[connection signal="pressed" from="Background/Margin/VBox/Buttons/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Buttons/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Buttons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Credit/HBox/Touff" to="." method="_on_Touff_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Credit/HBox/Heartbeast" to="." method="_on_Heartbeast_pressed"]
+[connection signal="finished" from="Audio/Music" to="." method="_on_Music_finished"]

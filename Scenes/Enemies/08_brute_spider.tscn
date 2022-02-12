@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Enemies/08_brute_spider.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/Enemies/Spider/08_brute_spider.svg" type="Texture" id=3]
+
+[node name="BruteSpider" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+max_hp = 65
+damage = 9
+experience = 640.0
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+
+[node name="HPLabel" parent="." index="1"]
+text = "65hp"
+
+[node name="InputInfo" parent="." index="4"]
+description = "Brute Spider.
+HP 65 | DMG 9"

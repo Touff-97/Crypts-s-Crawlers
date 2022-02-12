@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/unlock.wav-cb2265788b88dc45d6afc3e6ebefef8f.sample"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/unlock.wav"
+dest_files=[ "res://.import/unlock.wav-cb2265788b88dc45d6afc3e6ebefef8f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

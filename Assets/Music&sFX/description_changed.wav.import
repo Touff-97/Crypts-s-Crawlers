@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/description_changed.wav-5dd11bd33c8d0acd3c941877149a253c.sample"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/description_changed.wav"
+dest_files=[ "res://.import/description_changed.wav-5dd11bd33c8d0acd3c941877149a253c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

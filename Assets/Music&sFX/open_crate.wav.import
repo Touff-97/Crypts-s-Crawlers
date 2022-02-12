@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/open_crate.wav-23db7168a9ca3b8c87bd682e922f8d5a.sample"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/open_crate.wav"
+dest_files=[ "res://.import/open_crate.wav-23db7168a9ca3b8c87bd682e922f8d5a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

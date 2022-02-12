@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Doors/Rooms/wooden-door.svg" type="Texture" id=2]
+[ext_resource path="res://Scripts/Doors/ShopDoor.gd" type="Script" id=3]
+
+[node name="ShopDoor" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+door_type = 2
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="InputInfo" parent="." index="1"]
+description = "A wooden door."

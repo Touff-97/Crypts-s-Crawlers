@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snare.mp3-400d0bdae8132776e5a3ff83101f7afb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/snare.mp3"
+dest_files=[ "res://.import/snare.mp3-400d0bdae8132776e5a3ff83101f7afb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

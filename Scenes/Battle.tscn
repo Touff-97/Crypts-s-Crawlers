@@ -1,0 +1,1248 @@
+[gd_scene load_steps=87 format=2]
+
+[ext_resource path="res://Scenes/Enemies/08_brute_spider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/PlayerStats.gd" type="Script" id=2]
+[ext_resource path="res://Resources/TempTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/Actions/SwordActionButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies/02_baby_spider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/StatsPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/05_elite_spider.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/01_larvae_spider.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Battle.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Actions/HealActionButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemies/03_clinging_spider.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Sprites/Theme/PermVector/stone-wall.svg" type="Texture" id=12]
+[ext_resource path="res://Scenes/Doors/EntranceDoor.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/Actions/KeysInspectButton.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Doors/ShopDoor.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Doors/TrapDoor.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Doors/EnemyDoor.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Actions/IdleActionButton.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Actions/InventoryActionButton.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Enemies/06_stealth_spider.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Enemies/09_broodmother_spider.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Enemies/07_captor_spider.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Enemies/04_soldier_spider.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Fonts/Montserrat-Regular.ttf" type="DynamicFontData" id=25]
+[ext_resource path="res://Scenes/LevelUpUI.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Assets/Sprites/coin_icon.svg" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites/Doors/Rooms/doorway.svg" type="Texture" id=28]
+[ext_resource path="res://Scenes/Actions/BlockActionButton.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Actions/RunActionButton.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scripts/InspectLabels/LevelInspectButton.gd" type="Script" id=31]
+[ext_resource path="res://Scripts/InspectLabels/XpInspectButton.gd" type="Script" id=32]
+[ext_resource path="res://Scripts/InspectLabels/PurseInspectButton.gd" type="Script" id=33]
+[ext_resource path="res://Scripts/InspectLabels/DoorsInspectButton.gd" type="Script" id=34]
+[ext_resource path="res://Scenes/CheatConsole.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/Trader.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Scenes/Doors/TreasureDoor.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/Trap.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Assets/Sprites/Items/Loot/key.svg" type="Texture" id=40]
+[ext_resource path="res://Assets/Sprites/stairs.svg" type="Texture" id=41]
+[ext_resource path="res://Scripts/InspectLabels/FloorsInspectButton.gd" type="Script" id=42]
+[ext_resource path="res://Assets/Sprites/Items/Loot/ring.svg" type="Texture" id=43]
+[ext_resource path="res://Assets/Sprites/Items/Loot/crown.svg" type="Texture" id=44]
+[ext_resource path="res://Assets/Sprites/Items/Loot/rupee.svg" type="Texture" id=45]
+[ext_resource path="res://Assets/Sprites/Items/Loot/crystal.svg" type="Texture" id=46]
+[ext_resource path="res://Scenes/Enemies/Fly.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Scenes/Enemies/Ladybug.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Scenes/Enemies/Centipede.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Scenes/Enemies/Mantis.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Scenes/Enemies/SpottedBug.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Scenes/Enemies/Crab.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Scenes/Enemies/Cigale.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Scenes/Enemies/Ant.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Scenes/Enemies/Scorpion.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Assets/Music&sFX/description_changed.wav" type="AudioStream" id=56]
+[ext_resource path="res://Assets/Music&sFX/door_open.wav" type="AudioStream" id=57]
+[ext_resource path="res://Assets/Music&sFX/game_over.wav" type="AudioStream" id=58]
+[ext_resource path="res://Assets/Music&sFX/level_up.wav" type="AudioStream" id=59]
+[ext_resource path="res://Assets/Music&sFX/keys.wav" type="AudioStream" id=60]
+[ext_resource path="res://Assets/Music&sFX/coins.wav" type="AudioStream" id=61]
+[ext_resource path="res://Assets/Music&sFX/win.wav" type="AudioStream" id=62]
+[ext_resource path="res://Assets/Music&sFX/convert_coin.wav" type="AudioStream" id=63]
+[ext_resource path="res://Assets/Music&sFX/random.wav" type="AudioStream" id=64]
+[ext_resource path="res://Assets/Music&sFX/rocks.wav" type="AudioStream" id=65]
+[ext_resource path="res://Assets/Music&sFX/distant.wav" type="AudioStream" id=66]
+[ext_resource path="res://Assets/Music&sFX/hurt.wav" type="AudioStream" id=67]
+
+[sub_resource type="DynamicFont" id=10]
+size = 8
+use_filter = true
+extra_spacing_top = 1
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 8
+use_filter = true
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+use_filter = true
+extra_spacing_top = 1
+font_data = ExtResource( 25 )
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "blink"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "blink"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=17]
+size = 24
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOver:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "point_takeaway"
+}, {
+"args": [  ],
+"method": "point_takeaway"
+}, {
+"args": [  ],
+"method": "point_takeaway"
+}, {
+"args": [  ],
+"method": "point_takeaway"
+}, {
+"args": [  ],
+"method": "point_takeaway"
+}, {
+"args": [  ],
+"method": "point_takeaway"
+} ]
+}
+
+[node name="Battle" type="Node"]
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_vertical_guides_": [ -158.0 ],
+"_editor_description_": "Features:
+- Multiple enemies
+- Multiple actions
+- Multiple dungeon settings
+- Display enemy intent
+- Display status and actions w/ icons
+- Experience bar and level ups
+- Non-agressive encounters"
+}
+doors = [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 38 ), ExtResource( 16 ) ]
+enemies = [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 24 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 1 ), ExtResource( 22 ) ]
+mobs = [ ExtResource( 51 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 49 ), ExtResource( 50 ) ]
+special = [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 39 ) ]
+Ambient = [ NodePath("Audio/DistantNoise"), NodePath("Audio/RocksFalling"), NodePath("Audio/LoudNoise") ]
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="VBoxContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackWall" type="ColorRect" parent="Background/Color"]
+margin_right = 180.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 94 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="GrayFloor" type="ColorRect" parent="Background/Color"]
+margin_top = 94.0
+margin_right = 180.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 0, 50 )
+color = Color( 0.298039, 0.298039, 0.298039, 1 )
+
+[node name="GrayFloor2" type="ColorRect" parent="Background/Color"]
+margin_top = 144.0
+margin_right = 180.0
+margin_bottom = 219.0
+rect_min_size = Vector2( 0, 75 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+
+[node name="GrayFloor3" type="ColorRect" parent="Background/Color"]
+margin_top = 219.0
+margin_right = 180.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 3
+color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
+
+[node name="WallsLeft" type="Control" parent="Background"]
+margin_left = -10.0
+margin_right = 30.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallBottom-Left" type="TextureRect" parent="Background/WallsLeft"]
+margin_top = 45.0
+margin_right = 512.0
+margin_bottom = 557.0
+rect_rotation = -2.11447
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallTop-Left" type="TextureRect" parent="Background/WallsLeft"]
+margin_left = 2.0
+margin_right = 514.0
+margin_bottom = 512.0
+rect_rotation = 2.01116
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallsRight" type="Control" parent="Background"]
+margin_left = 137.0
+margin_right = 177.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallBottom-Right" type="TextureRect" parent="Background/WallsRight"]
+margin_left = 1.0
+margin_top = 43.0
+margin_right = 513.0
+margin_bottom = 555.0
+rect_rotation = 3.88508
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 12 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallTop-Right" type="TextureRect" parent="Background/WallsRight"]
+margin_left = -2.0
+margin_top = 2.0
+margin_right = 510.0
+margin_bottom = 514.0
+rect_rotation = -2.84227
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 12 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Hurt" type="AudioStreamPlayer" parent="PlayerStats"]
+stream = ExtResource( 67 )
+bus = "Sounds"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+theme = ExtResource( 3 )
+custom_constants/separation = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextRoom" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="NextRoomButton" type="Button" parent="VBoxContainer/NextRoom" groups=["Button"]]
+visible = false
+margin_left = 7.0
+margin_top = 38.0
+margin_right = 172.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 70, 13 )
+toggle_mode = true
+text = "ENTER NEXT ROOM"
+
+[node name="EnemyPosition" type="Position2D" parent="VBoxContainer/NextRoom"]
+position = Vector2( 90, 52 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="EntranceDoor" parent="VBoxContainer/NextRoom/EnemyPosition" instance=ExtResource( 13 )]
+
+[node name="Stats" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 101.0
+margin_right = 180.0
+margin_bottom = 140.0
+mouse_filter = 2
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+
+[node name="StatsPanel" parent="VBoxContainer/Stats" instance=ExtResource( 6 )]
+margin_right = 178.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 176, 35 )
+
+[node name="HPLabel" parent="VBoxContainer/Stats/StatsPanel/HBox" index="0"]
+margin_right = 56.0
+text = "HP
+15/15"
+
+[node name="APLabel" parent="VBoxContainer/Stats/StatsPanel/HBox" index="1"]
+margin_left = 60.0
+margin_right = 116.0
+text = "AP
+3/3"
+
+[node name="MPLabel" parent="VBoxContainer/Stats/StatsPanel/HBox" index="2"]
+margin_left = 120.0
+margin_right = 176.0
+text = "MP
+10/10"
+
+[node name="Experience" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 141.0
+margin_right = 180.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 0, 10 )
+mouse_filter = 2
+custom_constants/margin_right = 5
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBoxContainer/Experience"]
+margin_left = 5.0
+margin_right = 175.0
+margin_bottom = 12.0
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer/Experience/HBox"]
+margin_right = 5.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 5, 0 )
+custom_fonts/font = SubResource( 10 )
+text = "1"
+align = 1
+valign = 2
+
+[node name="LevelInspectButton" type="TextureButton" parent="VBoxContainer/Experience/HBox/LevelLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExperienceBar" type="ProgressBar" parent="VBoxContainer/Experience/HBox"]
+margin_left = 9.0
+margin_right = 170.0
+margin_bottom = 12.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+percent_visible = false
+
+[node name="ExpLabel" type="Label" parent="VBoxContainer/Experience/HBox/ExperienceBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 9 )
+text = "0/100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XpInspectButton" type="TextureButton" parent="VBoxContainer/Experience/HBox/ExperienceBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Control" parent="VBoxContainer"]
+margin_top = 156.0
+margin_right = 180.0
+margin_bottom = 320.0
+mouse_filter = 2
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="VBoxContainer/UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleActionButtons" type="MarginContainer" parent="VBoxContainer/UI/VBox"]
+margin_right = 180.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 110 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 2
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 22
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/UI/VBox/BattleActionButtons"]
+margin_left = 10.0
+margin_top = 2.0
+margin_right = 170.0
+margin_bottom = 88.0
+
+[node name="Grid" type="GridContainer" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer"]
+margin_right = 160.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 4
+custom_constants/hseparation = 4
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SwordActionButton" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid" instance=ExtResource( 4 )]
+margin_right = 78.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 33, 13 )
+
+[node name="BlockActionButton" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid" instance=ExtResource( 29 )]
+margin_left = 82.0
+margin_right = 160.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 33, 13 )
+
+[node name="IdleActionButton" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid" instance=ExtResource( 18 )]
+margin_top = 28.0
+margin_right = 78.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 33, 13 )
+size_flags_horizontal = 1
+
+[node name="HealActionButton" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid" instance=ExtResource( 10 )]
+margin_left = 82.0
+margin_top = 28.0
+margin_right = 160.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 33, 13 )
+
+[node name="InventoryActionButton" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid" instance=ExtResource( 19 )]
+margin_top = 56.0
+margin_right = 78.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 33, 13 )
+size_flags_horizontal = 1
+
+[node name="RunActionButton" parent="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid" instance=ExtResource( 30 )]
+margin_left = 82.0
+margin_top = 56.0
+margin_right = 160.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 33, 13 )
+
+[node name="BottomUI" type="VBoxContainer" parent="VBoxContainer/UI/VBox"]
+margin_top = 112.0
+margin_right = 180.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="VBoxContainer/UI/VBox/BottomUI"]
+margin_right = 180.0
+margin_bottom = 12.0
+mouse_filter = 2
+custom_constants/margin_right = 5
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 0
+
+[node name="Purse" type="HBoxContainer" parent="VBoxContainer/UI/VBox/BottomUI/Margin"]
+margin_left = 5.0
+margin_right = 26.0
+margin_bottom = 12.0
+size_flags_horizontal = 0
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Purse"]
+margin_right = 12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+texture = ExtResource( 27 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Purse"]
+margin_left = 16.0
+margin_right = 21.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 11 )
+text = "0"
+valign = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Purse"]
+anims/RESET = SubResource( 12 )
+anims/blink = SubResource( 13 )
+
+[node name="PurseInspectButton" type="TextureButton" parent="VBoxContainer/UI/VBox/BottomUI/Margin"]
+margin_left = 5.0
+margin_right = 26.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 21, 0 )
+size_flags_horizontal = 0
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Doors" type="HBoxContainer" parent="VBoxContainer/UI/VBox/BottomUI/Margin"]
+margin_left = 55.0
+margin_right = 125.0
+margin_bottom = 12.0
+size_flags_horizontal = 4
+
+[node name="Icon2" type="TextureRect" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Doors"]
+margin_right = 12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+texture = ExtResource( 41 )
+expand = true
+flip_h = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Doors"]
+margin_left = 16.0
+margin_right = 21.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 11 )
+text = "0"
+valign = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Doors"]
+margin_left = 25.0
+margin_right = 45.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 20, 0 )
+custom_styles/panel = SubResource( 16 )
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Doors"]
+margin_left = 49.0
+margin_right = 61.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+texture = ExtResource( 28 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Doors"]
+margin_left = 65.0
+margin_right = 70.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 11 )
+text = "0"
+valign = 2
+
+[node name="Keys" type="HBoxContainer" parent="VBoxContainer/UI/VBox/BottomUI/Margin"]
+margin_left = 154.0
+margin_right = 175.0
+margin_bottom = 12.0
+size_flags_horizontal = 8
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Keys"]
+margin_right = 12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Keys"]
+margin_left = 16.0
+margin_right = 21.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 11 )
+text = "0"
+valign = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/UI/VBox/BottomUI/Margin/Keys"]
+anims/RESET = SubResource( 14 )
+anims/blink = SubResource( 15 )
+
+[node name="KeysInspectButton" type="TextureButton" parent="VBoxContainer/UI/VBox/BottomUI/Margin"]
+margin_left = 154.0
+margin_right = 175.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 21, 0 )
+size_flags_horizontal = 8
+script = ExtResource( 14 )
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/UI/VBox/BottomUI"]
+margin_top = 14.0
+margin_right = 180.0
+margin_bottom = 94.0
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/margin_right = -3
+custom_constants/margin_left = -3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionPanel" type="Panel" parent="VBoxContainer/UI/VBox/BottomUI/MarginContainer"]
+margin_left = -3.0
+margin_right = 183.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/UI/VBox/BottomUI/MarginContainer/DescriptionPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 6
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/UI/VBox/BottomUI/MarginContainer/DescriptionPanel/MarginContainer"]
+margin_left = 5.0
+margin_right = 180.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+text = "You finally arrive."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoorsInspectButton" type="TextureButton" parent="VBoxContainer/UI"]
+margin_left = 105.0
+margin_top = 112.0
+margin_right = 126.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 21, 12 )
+size_flags_horizontal = 4
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FloorsInspectButton" type="TextureButton" parent="VBoxContainer/UI"]
+margin_left = 55.0
+margin_top = 112.0
+margin_right = 76.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 21, 12 )
+size_flags_horizontal = 4
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" parent="." instance=ExtResource( 20 )]
+
+[node name="Grid" parent="Inventory/Margin/VBox" index="1"]
+margin_bottom = 282.0
+
+[node name="Slot1" parent="Inventory/Margin/VBox/Grid" index="1"]
+margin_top = 26.0
+margin_bottom = 50.0
+
+[node name="Slot2" parent="Inventory/Margin/VBox/Grid" index="2"]
+margin_top = 52.0
+margin_bottom = 76.0
+
+[node name="Slot3" parent="Inventory/Margin/VBox/Grid" index="3"]
+margin_top = 78.0
+margin_bottom = 102.0
+
+[node name="Slot4" parent="Inventory/Margin/VBox/Grid" index="4"]
+margin_top = 104.0
+margin_bottom = 128.0
+
+[node name="Slot5" parent="Inventory/Margin/VBox/Grid" index="5"]
+margin_top = 130.0
+margin_bottom = 154.0
+
+[node name="Slot6" parent="Inventory/Margin/VBox/Grid" index="6"]
+margin_top = 156.0
+margin_bottom = 180.0
+
+[node name="Slot7" parent="Inventory/Margin/VBox/Grid" index="7"]
+margin_top = 182.0
+margin_bottom = 206.0
+
+[node name="Slot8" parent="Inventory/Margin/VBox/Grid" index="8"]
+margin_top = 208.0
+margin_bottom = 232.0
+
+[node name="Back" parent="Inventory/Margin/VBox/Grid" index="9"]
+margin_top = 234.0
+margin_bottom = 258.0
+
+[node name="LevelUp" parent="." instance=ExtResource( 26 )]
+
+[node name="CheatConsole" parent="." instance=ExtResource( 35 )]
+
+[node name="GameOver" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -160.0
+margin_right = 90.0
+margin_bottom = 160.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.5
+margin_top = -40.0
+margin_right = 75.5
+margin_bottom = 40.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameOver/VBox"]
+margin_right = 151.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 17 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverButton" type="Button" parent="GameOver/VBox" groups=["Button"]]
+margin_left = 30.0
+margin_top = 56.0
+margin_right = 121.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 13 )
+size_flags_horizontal = 4
+theme = ExtResource( 3 )
+toggle_mode = true
+text = "TRY AGAIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinScreen" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+color = Color( 0, 0, 0, 0.941176 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="WinScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="VBox" type="VBoxContainer" parent="WinScreen/Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 170.0
+margin_bottom = 310.0
+custom_constants/separation = 10
+
+[node name="Filler" type="Panel" parent="WinScreen/Margin/VBox"]
+margin_right = 160.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 24 )
+
+[node name="Title" type="Label" parent="WinScreen/Margin/VBox"]
+margin_top = 20.0
+margin_right = 160.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 18 )
+text = "YOU'VE WON!"
+align = 1
+valign = 1
+
+[node name="Filler2" type="Panel" parent="WinScreen/Margin/VBox"]
+margin_top = 56.0
+margin_right = 160.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 0, 10 )
+custom_styles/panel = SubResource( 24 )
+
+[node name="HBox" type="HBoxContainer" parent="WinScreen/Margin/VBox"]
+margin_top = 76.0
+margin_right = 160.0
+margin_bottom = 90.0
+
+[node name="Button" type="Button" parent="WinScreen/Margin/VBox/HBox" groups=["Button"]]
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 5
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+toggle_mode = true
+text = "Crown"
+icon = ExtResource( 44 )
+align = 0
+expand_icon = true
+
+[node name="Crown" type="Label" parent="WinScreen/Margin/VBox/HBox"]
+margin_left = 152.0
+margin_right = 160.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="HBox2" type="HBoxContainer" parent="WinScreen/Margin/VBox"]
+margin_top = 100.0
+margin_right = 160.0
+margin_bottom = 114.0
+
+[node name="Button" type="Button" parent="WinScreen/Margin/VBox/HBox2" groups=["Button"]]
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 5
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+toggle_mode = true
+text = "Crystal"
+icon = ExtResource( 46 )
+align = 0
+expand_icon = true
+
+[node name="Crystal" type="Label" parent="WinScreen/Margin/VBox/HBox2"]
+margin_left = 152.0
+margin_right = 160.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="HBox3" type="HBoxContainer" parent="WinScreen/Margin/VBox"]
+margin_top = 124.0
+margin_right = 160.0
+margin_bottom = 138.0
+
+[node name="Button" type="Button" parent="WinScreen/Margin/VBox/HBox3" groups=["Button"]]
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 5
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+toggle_mode = true
+text = "Ring"
+icon = ExtResource( 43 )
+align = 0
+expand_icon = true
+
+[node name="Ring" type="Label" parent="WinScreen/Margin/VBox/HBox3"]
+margin_left = 152.0
+margin_right = 160.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="HBox4" type="HBoxContainer" parent="WinScreen/Margin/VBox"]
+margin_top = 148.0
+margin_right = 160.0
+margin_bottom = 162.0
+
+[node name="Button" type="Button" parent="WinScreen/Margin/VBox/HBox4" groups=["Button"]]
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 5
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+toggle_mode = true
+text = "Rupee"
+icon = ExtResource( 45 )
+align = 0
+expand_icon = true
+
+[node name="Rupee" type="Label" parent="WinScreen/Margin/VBox/HBox4"]
+margin_left = 152.0
+margin_right = 160.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="HSeparator" type="HSeparator" parent="WinScreen/Margin/VBox"]
+margin_top = 172.0
+margin_right = 160.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox5" type="HBoxContainer" parent="WinScreen/Margin/VBox"]
+margin_top = 186.0
+margin_right = 160.0
+margin_bottom = 200.0
+
+[node name="Button" type="Button" parent="WinScreen/Margin/VBox/HBox5" groups=["Button"]]
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 5
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+toggle_mode = true
+text = "Coins"
+icon = ExtResource( 27 )
+align = 0
+expand_icon = true
+
+[node name="Coins" type="Label" parent="WinScreen/Margin/VBox/HBox5"]
+margin_left = 152.0
+margin_right = 160.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="Filler3" type="Panel" parent="WinScreen/Margin/VBox"]
+margin_top = 210.0
+margin_right = 160.0
+margin_bottom = 233.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 24 )
+
+[node name="GameOverButton" type="Button" parent="WinScreen/Margin/VBox" groups=["Button"]]
+visible = false
+margin_left = 34.0
+margin_top = 243.0
+margin_right = 125.0
+margin_bottom = 267.0
+rect_min_size = Vector2( 0, 13 )
+size_flags_horizontal = 4
+theme = ExtResource( 3 )
+toggle_mode = true
+text = "TRY AGAIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Filler4" type="Panel" parent="WinScreen/Margin/VBox"]
+margin_top = 277.0
+margin_right = 160.0
+margin_bottom = 300.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/RESET = SubResource( 5 )
+anims/fade = SubResource( 6 )
+anims/game_over = SubResource( 7 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Death" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 58 )
+bus = "Music"
+
+[node name="Win" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 62 )
+bus = "Music"
+
+[node name="Description" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 56 )
+bus = "Sounds"
+
+[node name="Door" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 57 )
+bus = "Sounds"
+
+[node name="LevelUp" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 59 )
+bus = "Sounds"
+
+[node name="CoinGet" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 61 )
+bus = "Sounds"
+
+[node name="KeysGet" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 60 )
+bus = "Sounds"
+
+[node name="ConvertToCoin" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 63 )
+bus = "Sounds"
+
+[node name="DistantNoise" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 64 )
+bus = "Sounds"
+
+[node name="RocksFalling" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 65 )
+bus = "Sounds"
+
+[node name="LoudNoise" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 66 )
+volume_db = -18.0
+bus = "Sounds"
+
+[connection signal="PlayerDied" from="PlayerStats" to="." method="_on_PlayerStats_PlayerDied"]
+[connection signal="ap_changed" from="PlayerStats" to="VBoxContainer/Stats/StatsPanel" method="_on_PlayerStats_ap_changed"]
+[connection signal="coin_get" from="PlayerStats" to="." method="_on_PlayerStats_coin_get"]
+[connection signal="experience_gained" from="PlayerStats" to="." method="_on_PlayerStats_experience_gained"]
+[connection signal="hp_changed" from="PlayerStats" to="VBoxContainer/Stats/StatsPanel" method="_on_PlayerStats_hp_changed"]
+[connection signal="inventory_toggled" from="PlayerStats" to="." method="_on_PlayerStats_inventory_toggled"]
+[connection signal="item_picked" from="PlayerStats" to="." method="_on_PlayerStats_item_picked"]
+[connection signal="item_used" from="PlayerStats" to="." method="_on_PlayerStats_item_used"]
+[connection signal="levelled_up" from="PlayerStats" to="." method="_on_PlayerStats_levelled_up"]
+[connection signal="mp_changed" from="PlayerStats" to="VBoxContainer/Stats/StatsPanel" method="_on_PlayerStats_mp_changed"]
+[connection signal="pressed" from="VBoxContainer/NextRoom/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]
+[connection signal="description_changed" from="VBoxContainer/NextRoom/EnemyPosition/EntranceDoor" to="." method="_on_description_changed"]
+[connection signal="door_entered" from="VBoxContainer/NextRoom/EnemyPosition/EntranceDoor" to="." method="_on_door_entered"]
+[connection signal="description_changed" from="VBoxContainer/Stats/StatsPanel" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/Experience/HBox/LevelLabel/LevelInspectButton" to="." method="_on_description_changed"]
+[connection signal="pressed" from="VBoxContainer/Experience/HBox/LevelLabel/LevelInspectButton" to="VBoxContainer/Experience/HBox/LevelLabel/LevelInspectButton" method="_on_LevelInspectButton_pressed"]
+[connection signal="description_changed" from="VBoxContainer/Experience/HBox/ExperienceBar/XpInspectButton" to="." method="_on_description_changed"]
+[connection signal="pressed" from="VBoxContainer/Experience/HBox/ExperienceBar/XpInspectButton" to="VBoxContainer/Experience/HBox/ExperienceBar/XpInspectButton" method="_on_XpInspectButton_pressed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid/SwordActionButton" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid/BlockActionButton" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid/IdleActionButton" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid/HealActionButton" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid/InventoryActionButton" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BattleActionButtons/ScrollContainer/Grid/RunActionButton" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BottomUI/Margin/PurseInspectButton" to="." method="_on_description_changed"]
+[connection signal="pressed" from="VBoxContainer/UI/VBox/BottomUI/Margin/PurseInspectButton" to="VBoxContainer/UI/VBox/BottomUI/Margin/PurseInspectButton" method="_on_PurseInspectButton_pressed"]
+[connection signal="description_changed" from="VBoxContainer/UI/VBox/BottomUI/Margin/KeysInspectButton" to="." method="_on_description_changed"]
+[connection signal="pressed" from="VBoxContainer/UI/VBox/BottomUI/Margin/KeysInspectButton" to="VBoxContainer/UI/VBox/BottomUI/Margin/KeysInspectButton" method="_on_KeysInspectButton_pressed"]
+[connection signal="description_changed" from="VBoxContainer/UI/DoorsInspectButton" to="." method="_on_description_changed"]
+[connection signal="pressed" from="VBoxContainer/UI/DoorsInspectButton" to="VBoxContainer/UI/DoorsInspectButton" method="_on_DoorsInspectButton_pressed"]
+[connection signal="description_changed" from="VBoxContainer/UI/FloorsInspectButton" to="." method="_on_description_changed"]
+[connection signal="pressed" from="VBoxContainer/UI/FloorsInspectButton" to="VBoxContainer/UI/FloorsInspectButton" method="_on_FloorsInspectButton_pressed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot0" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot1" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot2" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot3" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot4" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot5" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot6" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot7" to="." method="_on_description_changed"]
+[connection signal="description_changed" from="Inventory/Margin/VBox/Grid/Slot8" to="." method="_on_description_changed"]
+[connection signal="inventory_toggled" from="CheatConsole" to="." method="_on_PlayerStats_inventory_toggled"]
+[connection signal="pressed" from="GameOver/VBox/GameOverButton" to="." method="_on_GameOverButton_pressed"]
+[connection signal="pressed" from="WinScreen/Margin/VBox/GameOverButton" to="." method="_on_GameOverButton_pressed"]
+
+[editable path="VBoxContainer/NextRoom/EnemyPosition/EntranceDoor"]
+[editable path="VBoxContainer/Stats/StatsPanel"]
+[editable path="Inventory"]
+[editable path="Inventory/Margin/VBox/Grid/Slot0"]

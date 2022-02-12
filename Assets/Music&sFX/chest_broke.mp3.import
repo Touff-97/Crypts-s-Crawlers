@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/chest_broke.mp3-a10bd3ffd72bbc67b6d45f81ff75de04.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/chest_broke.mp3"
+dest_files=[ "res://.import/chest_broke.mp3-a10bd3ffd72bbc67b6d45f81ff75de04.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

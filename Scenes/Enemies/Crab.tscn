@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Enemies/Mobs/03_crab.svg" type="Texture" id=2]
+[ext_resource path="res://Scripts/Enemies/Crab.gd" type="Script" id=3]
+
+[node name="Crab" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+max_hp = 28
+damage = 4
+experience = 26
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="HPLabel" parent="." index="1"]
+text = "28hp"
+
+[node name="InputInfo" parent="." index="4"]
+description = "Hermit Crab.
+HP 28 | DMG 4"

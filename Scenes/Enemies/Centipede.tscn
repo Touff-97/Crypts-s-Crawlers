@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Enemies/Centipede.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/Enemies/Mobs/08_centipede.svg" type="Texture" id=3]
+
+[node name="Centipede" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+max_hp = 68
+damage = 9
+experience = 656
+
+[node name="Sprite" parent="." index="0"]
+rotation = -1.5708
+texture = ExtResource( 3 )
+flip_h = true
+flip_v = true
+
+[node name="HPLabel" parent="." index="1"]
+text = "68hp"
+
+[node name="InputInfo" parent="." index="4"]
+description = "Giant Centipede.
+HP 68 | DMG 9"

@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Music&sFX/flame.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sprites/Enemies/Spider/02_baby_spider.svg" type="Texture" id=3]
+[ext_resource path="res://Scenes/InputInfo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Music&sFX/poison.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Music&sFX/insect_squash_1.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Music&sFX/insect_squash.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Music&sFX/insect_squash_2.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Music&sFX/chest_broke.mp3" type="AudioStream" id=9]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -4 ), Vector2( 0, 15 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "deal_damage"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "shake"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4, 2 ), Vector2( 4, -4 ), Vector2( -4, -2 ), Vector2( 2, 2 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource( 1 )
+loot = [ "Rupee", "Crown", "Crystal", "Ring", "Key" ]
+death_cries = [ NodePath("Audio/Squish/InsectSquish"), NodePath("Audio/Squish/InsectSquish1"), NodePath("Audio/Squish/InsectSquish2") ]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 3 )
+
+[node name="HPLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = -52.0
+margin_right = 21.0
+margin_bottom = -31.0
+text = "17hp"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/attack = SubResource( 5 )
+anims/shake = SubResource( 4 )
+
+[node name="InspectButton" type="TextureButton" parent="."]
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputInfo" parent="." instance=ExtResource( 4 )]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Flame" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 2 )
+volume_db = -12.0
+bus = "Sounds"
+
+[node name="Poison" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+bus = "Sounds"
+
+[node name="Squish" type="Node" parent="Audio"]
+
+[node name="InsectSquish" type="AudioStreamPlayer" parent="Audio/Squish"]
+stream = ExtResource( 7 )
+volume_db = 6.0
+bus = "Sounds"
+
+[node name="InsectSquish1" type="AudioStreamPlayer" parent="Audio/Squish"]
+stream = ExtResource( 6 )
+volume_db = 6.0
+bus = "Sounds"
+
+[node name="InsectSquish2" type="AudioStreamPlayer" parent="Audio/Squish"]
+stream = ExtResource( 8 )
+volume_db = 6.0
+bus = "Sounds"
+
+[node name="ChestBreak" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+bus = "Sounds"
+
+[connection signal="pressed" from="InspectButton" to="." method="_on_InspectButton_pressed"]

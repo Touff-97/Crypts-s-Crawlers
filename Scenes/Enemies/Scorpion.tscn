@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Enemies/Scorpion.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Enemies/Mobs/07_scorpion.svg" type="Texture" id=3]
+
+[node name="Scorpion" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+max_hp = 60
+damage = 8
+experience = 334
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="HPLabel" parent="." index="1"]
+text = "60hp"
+
+[node name="InputInfo" parent="." index="4"]
+description = "Albino Scorpion.
+HP 60 | DMG 8"

@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Actions/OpenActionButton.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ActionButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Treasure/locked.svg" type="Texture" id=3]
+[ext_resource path="res://Scripts/Treasure.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/InputInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/door.svg" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/exit.svg" type="Texture" id=7]
+[ext_resource path="res://Assets/Music&sFX/unlock.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Music&sFX/open_crate.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Music&sFX/description_changed.wav" type="AudioStream" id=10]
+
+[node name="Treasure" type="Node2D"]
+script = ExtResource( 4 )
+chests = [ "empty", "treasure", "mimic" ]
+loot = [ "crown", "crystal", "ring" ]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 3 )
+
+[node name="Exit" type="TextureButton" parent="Sprite"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -296.0
+margin_top = -256.0
+margin_right = -256.0
+margin_bottom = -216.0
+rect_min_size = Vector2( 80, 80 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenActionButton" parent="." groups=["Exception"] instance=ExtResource( 2 )]
+margin_left = -25.0
+margin_top = 24.0
+margin_right = 24.0
+margin_bottom = 48.0
+text = "Open"
+script = ExtResource( 1 )
+
+[node name="InputInfo" parent="OpenActionButton" instance=ExtResource( 5 )]
+description = "A locked chest."
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Unlock" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+bus = "Sounds"
+
+[node name="Open" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+bus = "Sounds"
+
+[node name="Exit" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 10 )
+bus = "Sounds"
+
+[connection signal="pressed" from="Sprite/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="chest_opened" from="OpenActionButton" to="." method="_on_OpenActionButton_chest_opened"]
+[connection signal="description_changed" from="OpenActionButton" to="." method="_on_OpenActionButton_description_changed"]

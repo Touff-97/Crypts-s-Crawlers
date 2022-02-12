@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/insect_squash_2.mp3-5df8102339f6b73690dc95f6f5d020ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/insect_squash_2.mp3"
+dest_files=[ "res://.import/insect_squash_2.mp3-5df8102339f6b73690dc95f6f5d020ba.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

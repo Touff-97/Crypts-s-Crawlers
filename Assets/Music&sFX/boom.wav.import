@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/boom.wav-2437c4444a905448beffc2b3878557e2.sample"
+
+[deps]
+
+source_file="res://Assets/Music&sFX/boom.wav"
+dest_files=[ "res://.import/boom.wav-2437c4444a905448beffc2b3878557e2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

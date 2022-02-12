@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Enemies/Mobs/01_bug.svg" type="Texture" id=2]
+[ext_resource path="res://Scripts/Enemies/SpottedBug.gd" type="Script" id=3]
+
+[node name="SpottedBug" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+max_hp = 12
+damage = 2
+experience = 7
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+flip_v = true
+
+[node name="HPLabel" parent="." index="1"]
+text = "12hp"
+
+[node name="InputInfo" parent="." index="4"]
+description = "Spotted Bug.
+HP 12 | DMG 2"
